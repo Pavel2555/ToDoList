@@ -18,10 +18,13 @@ import SwiftUI
 @main
 struct ToDoListApp: App {
   var body: some Scene {
+    @StateObject var listViewModel: ListViewModel = ListViewModel()
+    
     WindowGroup {
       NavigationStack {
         ListView()
       }
+      .environmentObject(listViewModel)
     }
   }
 }
